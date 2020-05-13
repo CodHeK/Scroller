@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "Scroller",
+  "version": "1.0",
+  "content_scripts": [{
+    "js": ["popup.js"],
+    "matches": [
+      "<all_urls>"
+    ]
+  }]
+}
