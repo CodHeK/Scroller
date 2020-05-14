@@ -1,21 +1,12 @@
 let scroll_debounce = null, popUp = false;
 
-const getDocumentHeight = () => {
-    let height = Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
-    );
-
-    return height;
-}
-
 const buildPopUp = (windowScroll) => {    
-    const documentSize = getDocumentHeight();
+    const documentSize = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    const windowSize = document.documentElement.clientHeight;
 
-    let percentage = Math.round(((windowScroll + document.documentElement.clientHeight) * 100)/documentSize);
+    let percentage = Math.round(((windowScroll + windowSize) * 100)/documentSize);
 
-    const top = (percentage * document.documentElement.clientHeight) / 100;
+    const top = (percentage * windowSize) / 100;
 
     const $popUp = document.createElement('div');
 
