@@ -20,7 +20,7 @@ const buildPopUp = (windowScroll) => {
 
     const $popUp = document.createElement('div');
 
-    $popUp.textContent = `${percentage}%`;
+    $popUp.textContent = `${percentage}% -`;
     $popUp.id = 'scroller-popup';
     
     $popUp.style.cssText = `
@@ -35,7 +35,7 @@ const buildPopUp = (windowScroll) => {
         letter-spacing: 1.5px;
         z-index: 1000;
         top: ${windowScroll + top - 30}px;
-        right: 5px;
+        right: 0px;
         background-color: transparent;
         color: #000;
         font-weight: bold;
